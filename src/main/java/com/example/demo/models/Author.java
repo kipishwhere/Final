@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -17,5 +19,8 @@ public class Author {
     private Long id;
     private String name;
     private int age;
+
+    @ManyToMany(mappedBy = "authors")
+    private List<Book> books;
 
 }
